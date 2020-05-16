@@ -1,6 +1,0 @@
-framework module Pods_Bizzy_App {
-  umbrella header "Pods-Bizzy App-umbrella.h"
-
-  export *
-  module * { export * }
-}
