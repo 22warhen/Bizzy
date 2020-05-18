@@ -16,6 +16,7 @@
 		BBF26D80246FB46A0088496C /* HamburglerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D7F246FB46A0088496C /* HamburglerView.swift */; };
 		BBF26D822470B8100088496C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D812470B8100088496C /* ContentView.swift */; };
 		BBF26D842470BA650088496C /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D832470BA650088496C /* Menu.swift */; };
+		BBF26D862473177C0088496C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D852473177B0088496C /* Account.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BBF26D7F246FB46A0088496C /* HamburglerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburglerView.swift; sourceTree = "<group>"; };
 		BBF26D812470B8100088496C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BBF26D832470BA650088496C /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		BBF26D852473177B0088496C /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				BBF26D6D246F21E60088496C /* SceneDelegate.swift */,
 				BBF26D6F246F21E60088496C /* OldView.swift */,
 				BBF26D812470B8100088496C /* ContentView.swift */,
+				BBF26D852473177B0088496C /* Account.swift */,
 				BBF26D832470BA650088496C /* Menu.swift */,
 				BBF26D7F246FB46A0088496C /* HamburglerView.swift */,
 				BBF26D71246F21E90088496C /* Assets.xcassets */,
@@ -161,6 +164,7 @@
 				BBF26D70246F21E60088496C /* OldView.swift in Sources */,
 				BBF26D822470B8100088496C /* ContentView.swift in Sources */,
 				BBF26D80246FB46A0088496C /* HamburglerView.swift in Sources */,
+				BBF26D862473177C0088496C /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +305,7 @@
 				DEVELOPMENT_TEAM = MPN3HZ648Y;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Bizzy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,6 +326,7 @@
 				DEVELOPMENT_TEAM = MPN3HZ648Y;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Bizzy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
