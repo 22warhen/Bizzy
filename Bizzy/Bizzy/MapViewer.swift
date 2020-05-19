@@ -1,5 +1,5 @@
 //
-//  Account.swift
+//  MapViewer.swift
 //  Bizzy
 //
 //  Created by Henry Warren on 5/18/20.
@@ -7,5 +7,3 @@
 //
 
 import Foundation
-var accountName = "Sign In"
-var loggedIn = true
