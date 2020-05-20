@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39801DC7DC564BC56EEB33E4 /* Pods_Bizzy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76AFDE5FD3330741DDD42458 /* Pods_Bizzy.framework */; };
 		BBF26D6C246F21E60088496C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D6B246F21E60088496C /* AppDelegate.swift */; };
 		BBF26D6E246F21E60088496C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D6D246F21E60088496C /* SceneDelegate.swift */; };
 		BBF26D70246F21E60088496C /* OldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D6F246F21E60088496C /* OldView.swift */; };
@@ -20,9 +21,15 @@
 		BBF26D8A247345C50088496C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D89247345C50088496C /* MapView.swift */; };
 		BBF26D8D24734E980088496C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D8C24734E980088496C /* Coordinator.swift */; };
 		BBF26D91247351840088496C /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D90247351840088496C /* Map.swift */; };
+		BBF26D9524741DA80088496C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBF26D9424741DA80088496C /* GoogleService-Info.plist */; };
+		BBF26D97247428320088496C /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D96247428320088496C /* DatabaseManager.swift */; };
+		BBF26D9924743EB90088496C /* DatabaseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D9824743EB80088496C /* DatabaseKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		560B2DF4E56306CBD951E3E5 /* Pods-Bizzy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bizzy.release.xcconfig"; path = "Target Support Files/Pods-Bizzy/Pods-Bizzy.release.xcconfig"; sourceTree = "<group>"; };
+		74E535A0F624A5F30C854C79 /* Pods-Bizzy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bizzy.debug.xcconfig"; path = "Target Support Files/Pods-Bizzy/Pods-Bizzy.debug.xcconfig"; sourceTree = "<group>"; };
+		76AFDE5FD3330741DDD42458 /* Pods_Bizzy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bizzy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBF26D68246F21E60088496C /* Bizzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bizzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBF26D6B246F21E60088496C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBF26D6D246F21E60088496C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +44,11 @@
 		BBF26D87247344AE0088496C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BBF26D89247345C50088496C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		BBF26D8C24734E980088496C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		BBF26D90247351840088496C /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Bizzy/Map.swift; sourceTree = SOURCE_ROOT; };
+		BBF26D90247351840088496C /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Bizzy/Coordinators/Map.swift; sourceTree = SOURCE_ROOT; };
+		BBF26D9424741DA80088496C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BBF26D96247428320088496C /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		BBF26D9824743EB80088496C /* DatabaseKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseKeys.swift; sourceTree = "<group>"; };
+		BBF26D9A2474CC520088496C /* Bizzy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bizzy.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,12 +56,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39801DC7DC564BC56EEB33E4 /* Pods_Bizzy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0843E374EBB3B39367D600 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76AFDE5FD3330741DDD42458 /* Pods_Bizzy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49EFEE8BDA6E76D1494C3614 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74E535A0F624A5F30C854C79 /* Pods-Bizzy.debug.xcconfig */,
+				560B2DF4E56306CBD951E3E5 /* Pods-Bizzy.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BBF26D5F246F21E60088496C = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +87,8 @@
 				BBF26D69246F21E60088496C /* Products */,
 				BBF26D6F246F21E60088496C /* OldView.swift */,
 				BBF26D7F246FB46A0088496C /* HamburglerView.swift */,
+				49EFEE8BDA6E76D1494C3614 /* Pods */,
+				0D0843E374EBB3B39367D600 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,17 +103,21 @@
 		BBF26D6A246F21E60088496C /* Bizzy */ = {
 			isa = PBXGroup;
 			children = (
+				BBF26D9A2474CC520088496C /* Bizzy.entitlements */,
 				BBF26D6B246F21E60088496C /* AppDelegate.swift */,
 				BBF26D6D246F21E60088496C /* SceneDelegate.swift */,
 				BBF26D87247344AE0088496C /* MainView.swift */,
-				BBF26D90247351840088496C /* Map.swift */,
-				BBF26D89247345C50088496C /* MapView.swift */,
-				BBF26D8B24734E7C0088496C /* Coordinators */,
 				BBF26D812470B8100088496C /* MenuView.swift */,
 				BBF26D852473177B0088496C /* Account.swift */,
+				BBF26D8B24734E7C0088496C /* Coordinators */,
+				BBF26D89247345C50088496C /* MapView.swift */,
+				BBF26D8C24734E980088496C /* Coordinator.swift */,
+				BBF26D9824743EB80088496C /* DatabaseKeys.swift */,
+				BBF26D96247428320088496C /* DatabaseManager.swift */,
 				BBF26D71246F21E90088496C /* Assets.xcassets */,
 				BBF26D76246F21E90088496C /* LaunchScreen.storyboard */,
 				BBF26D79246F21E90088496C /* Info.plist */,
+				BBF26D9424741DA80088496C /* GoogleService-Info.plist */,
 				BBF26D73246F21E90088496C /* Preview Content */,
 			);
 			path = Bizzy;
@@ -99,7 +134,7 @@
 		BBF26D8B24734E7C0088496C /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				BBF26D8C24734E980088496C /* Coordinator.swift */,
+				BBF26D90247351840088496C /* Map.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -111,9 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBF26D7C246F21E90088496C /* Build configuration list for PBXNativeTarget "Bizzy" */;
 			buildPhases = (
+				41C60B8A529292443ED2324E /* [CP] Check Pods Manifest.lock */,
 				BBF26D64246F21E60088496C /* Sources */,
 				BBF26D65246F21E60088496C /* Frameworks */,
 				BBF26D66246F21E60088496C /* Resources */,
+				B688B15663B72536BA28341F /* [CP] Embed Pods Frameworks */,
+				3E99548F78EAE171A538941A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBF26D78246F21E90088496C /* LaunchScreen.storyboard in Resources */,
+				BBF26D9524741DA80088496C /* GoogleService-Info.plist in Resources */,
 				BBF26D75246F21E90088496C /* Preview Assets.xcassets in Resources */,
 				BBF26D72246F21E90088496C /* Assets.xcassets in Resources */,
 			);
@@ -170,16 +209,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3E99548F78EAE171A538941A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bizzy/Pods-Bizzy-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bizzy/Pods-Bizzy-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bizzy/Pods-Bizzy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41C60B8A529292443ED2324E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bizzy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B688B15663B72536BA28341F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bizzy/Pods-Bizzy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bizzy/Pods-Bizzy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bizzy/Pods-Bizzy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BBF26D64246F21E60088496C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BBF26D91247351840088496C /* Map.swift in Sources */,
+				BBF26D97247428320088496C /* DatabaseManager.swift in Sources */,
 				BBF26D8D24734E980088496C /* Coordinator.swift in Sources */,
 				BBF26D6C246F21E60088496C /* AppDelegate.swift in Sources */,
 				BBF26D8A247345C50088496C /* MapView.swift in Sources */,
 				BBF26D88247344AE0088496C /* MainView.swift in Sources */,
+				BBF26D9924743EB90088496C /* DatabaseKeys.swift in Sources */,
 				BBF26D6E246F21E60088496C /* SceneDelegate.swift in Sources */,
 				BBF26D70246F21E60088496C /* OldView.swift in Sources */,
 				BBF26D822470B8100088496C /* MenuView.swift in Sources */,
@@ -318,8 +418,10 @@
 		};
 		BBF26D7D246F21E90088496C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74E535A0F624A5F30C854C79 /* Pods-Bizzy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Bizzy/Bizzy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Bizzy/Preview Content\"";
 				DEVELOPMENT_TEAM = MPN3HZ648Y;
@@ -339,8 +441,10 @@
 		};
 		BBF26D7E246F21E90088496C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 560B2DF4E56306CBD951E3E5 /* Pods-Bizzy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Bizzy/Bizzy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Bizzy/Preview Content\"";
 				DEVELOPMENT_TEAM = MPN3HZ648Y;

@@ -5,11 +5,11 @@
 //  Created by Henry Warren on 5/16/20.
 //  Copyright © 2020 Bizzy Inc. All rights reserved.
 //
-
 import SwiftUI
-
 struct Menu: View {
     @Binding var open: Bool
+
+    
     var body: some View {
         VStack{
             HStack{
@@ -25,13 +25,13 @@ struct Menu: View {
                                   .font(.system(size:24,weight:.bold))
                     .frame(height:15)
                     .offset(x: 0,y:-40)
-                    
+    
             .padding(.top,20)
+        
             
             MenuRow(menuRowActive: false,icon: "house",text: "Stores")
             MenuRow(menuRowActive: false,icon: "map",text: "Map")
             Spacer()
-            
             if loggedIn == true{
             MenuRow(menuRowActive:
                 false,icon:"arrow.uturn.left",text:"Log Out")
@@ -48,46 +48,28 @@ struct Menu: View {
                 self.open.toggle()
         }
     }
-    
 }
 
 
 struct MenuRow: View {
     @State var menuRowActive = false
     var icon = "house"
-    var text = "Dashboard"
-    @State var Stores = false
-    @State var Map = false
-    @State var LogOut = false
+    var text = "Stores"
+    var location = ContentView()
+    var icon2 = "map"
+    var text2 = "Map"
+    var icon3 = "arrow.uturn.left"
+    var text3 = accountName
+    func openView(closure: () -> ()) {
+        closure()
+    }
+    
+
     var body: some View {
-        
-        Button(action:
-            {
-                if self.text == "Stores"{
-                    print("enabled stores")
-                    self.Stores = true
-                    
-                    self.menuRowActive = true
-                    self.Map = false
-                    self.LogOut = false
-                }
-                if self.text == "Map"{
-                    print("enabled map")
-                self.menuRowActive = true
-                    self.Map = true
-                    self.Stores = false
-                    self.LogOut = false
-                }
-                if self.text == "Log Out"{
-                    print("enabled log out")
-                    self.LogOut = true
-                    self.menuRowActive = true
-                    self.Stores = false
-                    self.LogOut = false
-                    }
-            
-        }) {
-            HStack{
+        NavigationView{
+         NavigationLink(destination: ContentView().onAppear {print("going to main view")})
+ {
+             HStack{
                 Image(systemName: icon)
                     .foregroundColor(menuRowActive ? Color(.purple): .white)
                     .font(.system(size: 15,weight:menuRowActive ? .bold : .regular))
@@ -106,11 +88,13 @@ struct MenuRow: View {
             .offset(x:20)
         }
     }
-    
+    }
 }
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         Menu(open: .constant(true))
+
     }
 }
+
