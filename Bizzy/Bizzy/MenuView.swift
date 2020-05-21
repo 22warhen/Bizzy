@@ -6,10 +6,12 @@
 //  Copyright © 2020 Bizzy Inc. All rights reserved.
 //
 import SwiftUI
+let storesPage = MenuRow(menuRowActive: true,icon: "house",text: "Stores", x: "storesPage")
+let mapPage = MenuRow(menuRowActive: false,icon: "map",text: "Map",x: "mapPage")
+let logInPage = MenuRow(menuRowActive:
+               false,icon:"arrow.uturn.left",text:"Log Out",x: "logInPage")
 struct Menu: View {
     @Binding var open: Bool
-
-    
     var body: some View {
         VStack{
             HStack{
@@ -27,14 +29,11 @@ struct Menu: View {
                     .offset(x: 0,y:-40)
     
             .padding(.top,20)
-        
-            
-            MenuRow(menuRowActive: false,icon: "house",text: "Stores")
-            MenuRow(menuRowActive: false,icon: "map",text: "Map")
+            storesPage
+            mapPage
             Spacer()
             if loggedIn == true{
-            MenuRow(menuRowActive:
-                false,icon:"arrow.uturn.left",text:"Log Out")
+                logInPage
             }
         }
         .padding(.vertical,40)
@@ -51,23 +50,43 @@ struct Menu: View {
 }
 
 
-struct MenuRow: View {
-    @State var menuRowActive = false
-    var icon = "house"
-    var text = "Stores"
-    var location = ContentView()
-    var icon2 = "map"
-    var text2 = "Map"
-    var icon3 = "arrow.uturn.left"
-    var text3 = accountName
-    func openView(closure: () -> ()) {
-        closure()
-    }
-    
 
+
+struct MenuRow: View {
+    @EnvironmentObject var viewRouter: ViewRouter
+    @State var menuRowActive = true
+    @State var icon: String
+    @State var text: String
+    @State var x: String
+    func menuNavigate(location: String) {
+         print("doing shit")
+    if location == "storesPage" {
+    viewRouter.currentPage = "page1"
+    self.menuRowActive = true
+    mapPage.menuRowActive = false
+    logInPage.menuRowActive = false
+    print("done did shit 1")
+    }
+    else if location == "mapPage"{
+        viewRouter.currentPage = "page2"
+        storesPage.menuRowActive = false
+        self.menuRowActive = true
+        logInPage.menuRowActive = false
+        print("done did shit 2")
+    }
+    else if location == "logInPage"{
+        print("going to login page when it exists")
+        storesPage.menuRowActive = false
+        mapPage.menuRowActive = false
+        self.menuRowActive = true
+        print("done did shit 3")
+        }
+        else{print("that ain't it chief")}
+    }
     var body: some View {
-        NavigationView{
-         NavigationLink(destination: ContentView().onAppear {print("going to main view")})
+        Button(action : {
+            self.menuNavigate(location: self.x)
+            print("should be doing shit")})
  {
              HStack{
                 Image(systemName: icon)
@@ -87,7 +106,6 @@ struct MenuRow: View {
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             .offset(x:20)
         }
-    }
     }
 }
 
