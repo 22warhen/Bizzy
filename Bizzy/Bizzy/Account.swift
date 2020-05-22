@@ -12,7 +12,7 @@ import CryptoKit
 import AuthenticationServices
 import SwiftUI
 var accountName = "Sign In"
-var loggedIn = false
+var loggedIn = true
 let reference = DatabaseManager.root.collection(DatabaseKeys.CollectionPath.users).document()
 let uid = reference.documentID
 
@@ -27,11 +27,6 @@ final class SignInWithApple: UIViewRepresentable {
   // 4
   func updateUIView(_ uiView: ASAuthorizationAppleIDButton, context: Context) {
   }
-}
-struct MyView: View {
-    var body: some View {
-        Text("Hello, World!")
-    }
 }
 struct signIn {
     let provider = FUIOAuth.appleAuthProvider()
@@ -79,10 +74,12 @@ struct signIn {
 }
 struct signInView: View {
     var body: some View {
+        ZStack{
     //randomNonceString
         return VStack {
             SignInWithApple()
                 .frame(width:280,height:60)
+            }
         }
     }
 }

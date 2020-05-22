@@ -17,61 +17,51 @@ class ViewRouter: ObservableObject {
         }
     }
 }
+class Highlighter: ObservableObject {
 
+    @Published var highlight: Bool = true
+
+    func changeField() {
+        highlight = false
+    }
+}
 
  struct MotherView : View {
-    func menuNavigate(location: String) {
-        if location == "storesPage" {
-    viewRouter.currentPage = "page1"
-    storesPage.menuRowActive = true
-    mapPage.menuRowActive = false
-    logInPage.menuRowActive = false
-    }
-    else if location == "mapPage"{
-        viewRouter.currentPage = "page2"
-        storesPage.menuRowActive = false
-        mapPage.menuRowActive = true
-        logInPage.menuRowActive = false
-    }
-    else if location == "logInPage"{
-        print("going to login page when it exists")
-        storesPage.menuRowActive = false
-        mapPage.menuRowActive = false
-        logInPage.menuRowActive = true
-        }
-        else{print("that ain't it chief")}
-    }
+    @EnvironmentObject var viewRouter: ViewRouter
     @State var open = false
     @State var page = "page1"
-    @ObservedObject var viewRouter: ViewRouter
     var body: some View {
-        ZStack {
-            ZStack(alignment: .topLeading){
-            HStack(alignment: .top) {
-                        Button(action: {self.open.toggle()
-                            self.menuNavigate(location: "mapPage")
-                        }){
-                            Image(systemName: "line.horizontal.3")
-                                .imageScale(.large)
-                                .foregroundColor(.black)
+        Group {
+            ZStack {
+                ZStack(alignment: .topLeading){
+                HStack(alignment: .top) {
+                            Button(action: {self.open.toggle()
+                            }){
+                                Image(systemName: "line.horizontal.3")
+                                    .imageScale(.large)
+                                    .foregroundColor(.black)
 
-                        }
-                        .offset(y:15)
+                            }
+                            .offset(y:15)
+                    }
+
+                    .padding()
+                    Spacer()
                 }
-
-                .padding()
-                Spacer()
+            
+            VStack {
+                if viewRouter.currentPage == "page1" {
+                    ContentView()
+                } else if viewRouter.currentPage == "page2" {
+                    MapView()
+                }
+                else if viewRouter.currentPage == "page3" {
+                    signInView()
+                }
             }
-        
-        VStack {
-            if viewRouter.currentPage == "page1" {
-                ContentView()
-            } else if viewRouter.currentPage == "page2" {
-                MapView()
+                Menu(open: $open)
             }
         }
-            Menu(open: $open)
-    }
     }
     
 }
@@ -79,7 +69,7 @@ class ViewRouter: ObservableObject {
 
 struct MotherView_Previews : PreviewProvider {
     static var previews: some View {
-        MotherView()
+        MotherView().environmentObject(ViewRouter())
     }
 }
 

@@ -6,10 +6,10 @@
 //  Copyright © 2020 Bizzy Inc. All rights reserved.
 //
 import SwiftUI
-let storesPage = MenuRow(menuRowActive: true,icon: "house",text: "Stores", x: "storesPage")
-let mapPage = MenuRow(menuRowActive: false,icon: "map",text: "Map",x: "mapPage")
+let storesPage = MenuRow(menuRowActive: Highlighter(),icon: "house",text: "Stores", x: "page1")
+let mapPage = MenuRow(menuRowActive: Highlighter(),icon: "map",text: "Map",x: "page2")
 let logInPage = MenuRow(menuRowActive:
-               false,icon:"arrow.uturn.left",text:"Log Out",x: "logInPage")
+               Highlighter(),icon:"arrow.uturn.left",text:"Log Out",x: "page3")
 struct Menu: View {
     @Binding var open: Bool
     var body: some View {
@@ -54,43 +54,40 @@ struct Menu: View {
 
 struct MenuRow: View {
     @EnvironmentObject var viewRouter: ViewRouter
-    @State var menuRowActive = true
+    @ObservedObject var menuRowActive : Highlighter
     @State var icon: String
     @State var text: String
     @State var x: String
     func menuNavigate(location: String) {
-         print("doing shit")
-    if location == "storesPage" {
-    viewRouter.currentPage = "page1"
-    self.menuRowActive = true
-    mapPage.menuRowActive = false
-    logInPage.menuRowActive = false
+    if location == "page1" {
+    storesPage.menuRowActive.highlight = true
+    mapPage.menuRowActive.highlight = false
+    logInPage.menuRowActive.highlight = false
     print("done did shit 1")
     }
-    else if location == "mapPage"{
-        viewRouter.currentPage = "page2"
-        storesPage.menuRowActive = false
-        self.menuRowActive = true
-        logInPage.menuRowActive = false
+    else if self.viewRouter.currentPage == "page2"{
+        storesPage.menuRowActive.highlight = false
+        mapPage.menuRowActive.highlight = true
+        logInPage.menuRowActive.highlight = false
         print("done did shit 2")
     }
-    else if location == "logInPage"{
-        print("going to login page when it exists")
-        storesPage.menuRowActive = false
-        mapPage.menuRowActive = false
-        self.menuRowActive = true
+    else if location == "page3"{
+        storesPage.menuRowActive.highlight = false
+        mapPage.menuRowActive.highlight = false
+        logInPage.menuRowActive.highlight = true
         print("done did shit 3")
         }
         else{print("that ain't it chief")}
     }
     var body: some View {
         Button(action : {
+            self.viewRouter.currentPage = self.x
             self.menuNavigate(location: self.x)
             print("should be doing shit")})
  {
              HStack{
                 Image(systemName: icon)
-                    .foregroundColor(menuRowActive ? Color(.purple): .white)
+                    .foregroundColor(menuRowActive.highlight ? Color(.purple): .white)
                     .font(.system(size: 15,weight:menuRowActive ? .bold : .regular))
                 .frame(width: 48, height: 40)
                 
