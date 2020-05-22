@@ -74,13 +74,12 @@ struct signIn {
 }
 struct signInView: View {
     var body: some View {
-        ZStack{
     //randomNonceString
-        return VStack {
+        VStack (alignment: .leading) {
+            Spacer()
             SignInWithApple()
                 .frame(width:280,height:60)
             }
-        }
     }
 }
 

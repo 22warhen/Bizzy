@@ -28,43 +28,29 @@ class Highlighter: ObservableObject {
 
  struct MotherView : View {
     @EnvironmentObject var viewRouter: ViewRouter
-    @State var open = false
     @State var page = "page1"
     var body: some View {
-        Group {
-            ZStack {
-                ZStack(alignment: .topLeading){
-                HStack(alignment: .top) {
-                            Button(action: {self.open.toggle()
-                            }){
-                                Image(systemName: "line.horizontal.3")
-                                    .imageScale(.large)
-                                    .foregroundColor(.black)
-
-                            }
-                            .offset(y:15)
-                    }
-
-                    .padding()
-                    Spacer()
-                }
-            
-            VStack {
-                if viewRouter.currentPage == "page1" {
+        GeometryReader{ geometry in
+            ZStack{
+                if self.viewRouter.currentPage == "page1" {
+                    MenuButton.init(open: false)
                     ContentView()
-                } else if viewRouter.currentPage == "page2" {
-                    MapView()
+                } else if self.viewRouter.currentPage == "page2" {
+                    MenuButton.init(open: false)
+                    MapViewController()
                 }
-                else if viewRouter.currentPage == "page3" {
+                else if self.viewRouter.currentPage == "page3" {
+                    MenuButton.init(open: false)
                     signInView()
                 }
+                
             }
-                Menu(open: $open)
+            
             }
-        }
+        .overlay(MenuButton())
+                }
     }
     
-}
 
 
 struct MotherView_Previews : PreviewProvider {

@@ -11,10 +11,11 @@ import SwiftUI
 struct ContentView: View {
 //@State var open = false
     var body: some View {
-        ZStack {
-            VStack{
+            ZStack{
                 Text("yo")
-                
+        }
+        }
+    }
                 /*Button(action:{
                     let userData = [
                     "uid": uid,
@@ -38,11 +39,7 @@ struct ContentView: View {
                 
                 })
                 {Text("Hello")}*/
-                
-            }
-        }
-    }
-}
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		39801DC7DC564BC56EEB33E4 /* Pods_Bizzy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76AFDE5FD3330741DDD42458 /* Pods_Bizzy.framework */; };
+		BB08DB7A247864B8000838D0 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB08DB79247864B8000838D0 /* MenuButton.swift */; };
+		BB08DB7C24786C52000838D0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB08DB7B24786C52000838D0 /* MapViewController.swift */; };
 		BB20986F2475C0DD00F3E9FD /* MotherOfAllViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB20986E2475C0DD00F3E9FD /* MotherOfAllViews.swift */; };
 		BBF26D6C246F21E60088496C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D6B246F21E60088496C /* AppDelegate.swift */; };
 		BBF26D6E246F21E60088496C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D6D246F21E60088496C /* SceneDelegate.swift */; };
@@ -31,6 +33,8 @@
 		560B2DF4E56306CBD951E3E5 /* Pods-Bizzy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bizzy.release.xcconfig"; path = "Target Support Files/Pods-Bizzy/Pods-Bizzy.release.xcconfig"; sourceTree = "<group>"; };
 		74E535A0F624A5F30C854C79 /* Pods-Bizzy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bizzy.debug.xcconfig"; path = "Target Support Files/Pods-Bizzy/Pods-Bizzy.debug.xcconfig"; sourceTree = "<group>"; };
 		76AFDE5FD3330741DDD42458 /* Pods_Bizzy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bizzy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB08DB79247864B8000838D0 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		BB08DB7B24786C52000838D0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BB20986E2475C0DD00F3E9FD /* MotherOfAllViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherOfAllViews.swift; sourceTree = "<group>"; };
 		BBF26D68246F21E60088496C /* Bizzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bizzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBF26D6B246F21E60088496C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +115,9 @@
 				BB20986E2475C0DD00F3E9FD /* MotherOfAllViews.swift */,
 				BBF26D87247344AE0088496C /* MainView.swift */,
 				BBF26D812470B8100088496C /* MenuView.swift */,
+				BB08DB7B24786C52000838D0 /* MapViewController.swift */,
 				BBF26D852473177B0088496C /* Account.swift */,
+				BB08DB79247864B8000838D0 /* MenuButton.swift */,
 				BBF26D8B24734E7C0088496C /* Coordinators */,
 				BBF26D89247345C50088496C /* MapView.swift */,
 				BBF26D8C24734E980088496C /* Coordinator.swift */,
@@ -278,6 +284,7 @@
 			files = (
 				BBF26D91247351840088496C /* Map.swift in Sources */,
 				BBF26D97247428320088496C /* DatabaseManager.swift in Sources */,
+				BB08DB7A247864B8000838D0 /* MenuButton.swift in Sources */,
 				BBF26D8D24734E980088496C /* Coordinator.swift in Sources */,
 				BBF26D6C246F21E60088496C /* AppDelegate.swift in Sources */,
 				BBF26D8A247345C50088496C /* MapView.swift in Sources */,
@@ -288,6 +295,7 @@
 				BBF26D70246F21E60088496C /* OldView.swift in Sources */,
 				BBF26D822470B8100088496C /* MenuView.swift in Sources */,
 				BBF26D80246FB46A0088496C /* HamburglerView.swift in Sources */,
+				BB08DB7C24786C52000838D0 /* MapViewController.swift in Sources */,
 				BBF26D862473177C0088496C /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
