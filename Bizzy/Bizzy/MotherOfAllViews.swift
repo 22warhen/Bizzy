@@ -11,7 +11,7 @@ class ViewRouter: ObservableObject {
     
     let objectWillChange = PassthroughSubject<ViewRouter,Never>()
     
-    var currentPage: String = "page1" {
+    var currentPage: String = "page0" {
         didSet {
             objectWillChange.send(self)
         }
@@ -28,21 +28,31 @@ class Highlighter: ObservableObject {
 
  struct MotherView : View {
     @EnvironmentObject var viewRouter: ViewRouter
+    @EnvironmentObject var spark : Spark
     @State var page = "page1"
     var body: some View {
         GeometryReader{ geometry in
             ZStack{
+//                if self.spark.isUserAuthenticated == .undefined {
+//                    LaunchScreenView()
+//                }
+//                else if self.spark.isUserAuthenticated == .signedOut{
+//                    SignInView()
+//                }
+//                else if self.spark.isUserAuthenticated == .signedIn {
+//                    ContentView()
+//                }
+                
+                
                 if self.viewRouter.currentPage == "page1" {
-                    MenuButton.init(open: false)
                     ContentView()
                 } else if self.viewRouter.currentPage == "page2" {
-                    MenuButton.init(open: false)
                     MapViewController()
                 }
                 else if self.viewRouter.currentPage == "page3" {
-                    MenuButton.init(open: false)
                     signInView()
                 }
+                
                 
             }
             

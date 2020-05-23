@@ -11,6 +11,9 @@ import SwiftUI
 struct ContentView: View {
 //@State var open = false
     var body: some View {
+//        func setView1 {
+//        viewRouter.currentPage = "page1"
+//        }
             ZStack{
                 Text("yo")
         }

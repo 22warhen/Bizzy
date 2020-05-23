@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-
 struct MenuButton: View {
     @State var open = false
     var body: some View {
@@ -18,7 +17,7 @@ struct MenuButton: View {
                     }){
                         Image(systemName: "line.horizontal.3")
                             .imageScale(.large)
-                            .foregroundColor(.black)
+                            .foregroundColor(Color("bowob"))
 
                     }
                     .offset(y:15)
