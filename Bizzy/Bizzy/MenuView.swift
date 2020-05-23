@@ -63,15 +63,18 @@ struct MenuRow: View {
     func menuNavigate(location: String) {
     if self.viewRouter.currentPage == x {
     self.menuRowActive = true
-    print("done did stuff 1")
+        print(self.x,"highlighted",self.menuRowActive)
     }
-    else{self.menuRowActive = false}
+    else{self.menuRowActive = false
+        print(self.x,"highlighted",self.menuRowActive)
+        }
     }
     var body: some View {
+         if true{menuNavigate(location: x)}
          return Button(action : {
             self.viewRouter.currentPage = self.x
-            self.menuNavigate(location: self.x)}){
-        
+            self.menuNavigate(location: self.x)})
+         {
               HStack{
                 Image(systemName: icon)
                     .foregroundColor(menuRowActive ? Color(.purple): .white)
