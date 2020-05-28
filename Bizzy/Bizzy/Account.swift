@@ -75,16 +75,19 @@ struct signIn {
 struct signInView: View {
     var body: some View {
     //randomNonceString
+        ZStack{
         VStack (alignment: .leading) {
             Spacer()
             SignInWithApple()
                 .frame(width:280,height:60)
             }
+            MenuButton()
+        }
     }
 }
 
 struct Account_Previews: PreviewProvider {
     static var previews: some View {
-        signInView()
+        signInView().environmentObject(ViewRouter())
     }
 }
