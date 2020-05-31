@@ -8,6 +8,7 @@ import Foundation
 import Combine
 import SwiftUI
 import CoreLocation
+import SwiftLocation
 class ViewRouter: ObservableObject {
     var animationType : Animation = .spring()
     {
@@ -31,17 +32,22 @@ class ViewRouter: ObservableObject {
     @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var spark : Spark
     @State var page = "page1"
+    @State var avail = false
     @State var x = 0
     func oneSetter() {
         self.viewRouter.currentPage = "page1"
     }
-    
+
     let locationService = LocationServices()
     
     var body: some View {
+        let authCheck = LocationManager.shared.onAuthorizationChange.add { newState in
+            if newState == .available{
+                self.avail = true
+            }}
         once.run{
-//            if locationService.status != .notDetermined || locationService.status != .denied  || locationService.status != .restricted &&
-                if locationService.status == .authorizedAlways
+//            if locationService.status != .notDetermined && self.avail == true && locationService.status != .denied && locationService.status != .restricted &&
+            if locationService.status == .authorizedAlways
             {
             print("authorizedAlways enabled, heading to 'page1')")
             (oneSetter())

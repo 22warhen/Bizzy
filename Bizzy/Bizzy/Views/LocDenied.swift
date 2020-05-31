@@ -9,13 +9,13 @@
 import SwiftUI
 import SwiftLocation
 struct LocDenied: View {
-    init() {
-        LocationManager.shared.requireUserAuthorization(.always)
-    }
+    init(){
+        locationService.requestLocationAuthorization()}
     @State var locationService = LocationServices()
     @EnvironmentObject var viewRouter : ViewRouter
     var body: some View {
-        let observerID = LocationManager.shared.onAuthorizationChange.add { newState in
+
+        _ = LocationManager.shared.onAuthorizationChange.add { newState in
             if newState == .available && (self.locationService.status == .authorizedAlways){
                 self.viewRouter.currentPage = "page1"
                 // Remove all observers
@@ -28,7 +28,7 @@ struct LocDenied: View {
                 Color(UIColor.systemGray)
             }.edgesIgnoringSafeArea(.all)
         VStack (alignment: .leading){
-            Text("You denied access to location. To fix this:")
+            Text("You denied access to background location. To fix this:")
             Text("1.    Go to Settings -> Privacy -> Location Services -> Bizzy and enable \"Always\"").padding(.vertical)
             Text("2.    Re-enter Bizzy. That's it!")
         }.padding()

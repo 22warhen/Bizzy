@@ -34,7 +34,6 @@ class LocationServices: NSObject {
     }
     
     func requestLocationAuthorization() {
-        self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.requestAlwaysAuthorization()
     }
 }

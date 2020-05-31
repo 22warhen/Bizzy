@@ -17,16 +17,11 @@ struct WeNeedIt: View {
     @EnvironmentObject var viewRouter : ViewRouter
     @State var a = 2
     @State var count = 4
-    @State var firstButtonClick = false
+    @State var buttonClick = 1
+    @State var secondButtonClick = false
     var body: some View {
-        let observerID = LocationManager.shared.onAuthorizationChange.add { newState in
+        _ = LocationManager.shared.onAuthorizationChange.add { newState in
           print("Authorization status changed to \(newState)")
-            if newState == .available{
-                self.locationService.requestLocationAuthorization()
-            }
-            if self.locationService.status == .authorizedAlways && self.firstButtonClick == true{
-                self.viewRouter.currentPage = "page0.1"
-            }
         }
 //        if self.locationService.status == .authorizedAlways {
 //            self.viewRouter.currentPage = "page1"
@@ -60,7 +55,7 @@ struct WeNeedIt: View {
                 
                 Text("Need Your Location")
                     .font(.custom("Avenir Next", size: textSize(textStyle: .largeTitle)))
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("bowob"))
                 Text("Without your location, you won't be able to use Bizzy.")
                     .font(.system(size: 20))
                     .padding(.horizontal)
@@ -81,9 +76,17 @@ struct WeNeedIt: View {
 //                        print(self.locationService.status.rawValue)
 //
 //                        self.locationService.requestLocationAuthorization()
-//                        self.locationService.requestLocationAuthorization()
-                        LocationManager.shared.requireUserAuthorization()
-                        self.firstButtonClick = true
+                        //self.locationService.requestLocationAuthorization()
+                        LocationManager.shared.requireUserAuthorization(.whenInUse)
+                        if self.buttonClick > 1 {
+                            LocationManager.shared.requireUserAuthorization(.always)
+                            self.viewRouter.currentPage = "page0.1"
+                        }
+                        else {
+                            LocationManager.shared.requireUserAuthorization(.whenInUse)
+                        }
+                        self.buttonClick += 1
+                        self.a-=1
 
                     })
                     {
