@@ -23,7 +23,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>You need your location turned on to find nearby stores.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>You need your location turned on to find nearby stores.</string>
+	<string>You need your location turned on to find and report on nearby stores. Please tap on &quot;Change to Always Allow.&quot;</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

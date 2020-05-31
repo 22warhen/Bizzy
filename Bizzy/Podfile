@@ -11,6 +11,8 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 #Apple Authentication UI
 pod 'FirebaseUI/OAuth'
+pod 'AlamofireImage'
 pod 'Moya'
+pod 'SwiftLocation', '~> 4.0'
 
 end

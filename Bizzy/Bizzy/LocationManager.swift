@@ -12,19 +12,20 @@ enum EndResult<T> {
     case success(T)
     case failure(Error)
 }
-class LocationManager: NSObject {
+class LocationServices: NSObject {
     private let locationManager = CLLocationManager()
     var location:CLLocation? = nil
-    
+    var noLoco = false
     override init() {
         super.init()
         self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.distanceFilter = kCLDistanceFilterNone
-        self.locationManager.startUpdatingLocation()
+        //self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        //self.locationManager.distanceFilter = kCLDistanceFilterNone
+        //self.locationManager.startUpdatingLocation()
     }
     var newLocation: ((EndResult<CLLocation>) -> Void)?
-    var didChangeStatus: ((Bool) -> Void)?
+    var whenInUse: ((Bool) -> Void)?
+    var alwaysInUse: ((Bool) -> Void)?
     var status: CLAuthorizationStatus{
         return CLLocationManager.authorizationStatus()
     }
@@ -33,13 +34,12 @@ class LocationManager: NSObject {
     }
     
     func requestLocationAuthorization() {
-        print("doing stuff")
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.requestAlwaysAuthorization()
     }
 }
 
-extension LocationManager: CLLocationManagerDelegate {
+extension LocationServices: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         newLocation?(.failure(error))
     }
@@ -51,9 +51,29 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined,.restricted, .denied:
-            didChangeStatus?(false)
-        default:
-            didChangeStatus?(true)
+            whenInUse?(false)
+            alwaysInUse?(false)
+//        default:
+//            didChangeStatus?(true)
+        case .authorizedAlways:
+            alwaysInUse?(true)
+        case .authorizedWhenInUse:
+            whenInUse?(true)
+        @unknown default:
+            assertionFailure()
         }
     }
+}
+
+//run locationService once
+class Once {
+
+  var already: Bool = false
+
+  func run(block: () -> Void) {
+    guard !already else { return }
+
+    block()
+    already = true
+  }
 }

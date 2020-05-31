@@ -7,6 +7,7 @@
 import Foundation
 import Combine
 import SwiftUI
+import CoreLocation
 class ViewRouter: ObservableObject {
     var animationType : Animation = .spring()
     {
@@ -26,21 +27,27 @@ class ViewRouter: ObservableObject {
 }
 
  struct MotherView : View {
+    let once = Once()
     @EnvironmentObject var viewRouter: ViewRouter
     @EnvironmentObject var spark : Spark
-    private func noLoco() {
-    switch locationService.status {
-    case .notDetermined,.denied,.restricted:
-        self.viewRouter.currentPage = "page0"
-    default:
-        assertionFailure()
-        }
-    }
     @State var page = "page1"
-    let locationService = LocationManager()
+    @State var x = 0
+    func oneSetter() {
+        self.viewRouter.currentPage = "page1"
+    }
+    
+    let locationService = LocationServices()
+    
     var body: some View {
-        GeometryReader{ geometry in
-            ZStack{
+        once.run{
+//            if locationService.status != .notDetermined || locationService.status != .denied  || locationService.status != .restricted &&
+                if locationService.status == .authorizedAlways
+            {
+            print("authorizedAlways enabled, heading to 'page1')")
+            (oneSetter())
+            }}
+            
+        return ZStack{
 //                if self.spark.isUserAuthenticated == .undefined {
 //                    LaunchScreenView()
 //                }
@@ -49,10 +56,14 @@ class ViewRouter: ObservableObject {
 //                }
 //                else if self.spark.isUserAuthenticated == .signedIn {
 //                    ContentView()
-//                }
-                
-                if self.viewRouter.currentPage == "page0" {
-                    WeNeedIt(locationService: LocationManager())
+//                }i
+
+            
+            if self.viewRouter.currentPage == "page0.1" {
+                LocDenied()
+            }
+                if self.viewRouter.currentPage == "page0"{
+                    WeNeedIt(locationService: LocationServices())
                                }
                 else if self.viewRouter.currentPage == "page1" {
                         ContentView()
@@ -65,9 +76,7 @@ class ViewRouter: ObservableObject {
                 }
                 
             }
-            }
-        
-    }
+}
     
 
 

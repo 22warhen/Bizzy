@@ -13,17 +13,26 @@ struct ContentView: View {
 //        func setView1 {
 //        viewRouter.currentPage = "page1"
 //        }
-        VStack {
+       return VStack {
             ZStack(alignment:.topLeading){
                 
                 List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
                         VStack{
                             HStack{
+                                Spacer()
                                 Image(systemName: "map").resizable().aspectRatio(contentMode: .fit)
-                                    .frame(width: 100, height: 50)}
+                                    .frame(width: 100, height: 50)
+                                Spacer()
+                            }
+                            HStack{
                             Text("Hello")
-                            Text("Oh hello there")
+                            Spacer()
+                                Text("\(1)")
+                                Image(systemName: "person")
+                            }.padding(.horizontal)
+    
                         }
+                    .listRowBackground(Color.red)
                 }.padding(.vertical, 50)
                 .overlay(MenuButton())
                 
