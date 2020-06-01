@@ -8,25 +8,16 @@
 
 import UIKit
 import Firebase
-import Moya
+//import Moya
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    let service = MoyaProvider<YelpService.BusinessProvider>()
+   // let service = MoyaProvider<YelpService.BusinessProvider>()
     let jsonDecoder = JSONDecoder()
     let locationService = LocationServices()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // Override point for customization after application launch.
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        service.request(.search(lat: 42.361145, long: -71.0507083)) {(result) in
-            switch result {
-            case .success(let response):
-                let root = try? self.jsonDecoder.decode(Root.self, from: response.data)
-                print(root)
-            case .failure(let error):
-                print("Error: \(error)")
-            }
-        }
+
         FirebaseApp.configure()
         return true
     }

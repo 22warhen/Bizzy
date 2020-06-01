@@ -32,6 +32,7 @@
 		BB86386F2478DF1000B7AE45 /* SparkAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8638602478DF1000B7AE45 /* SparkAuth.swift */; };
 		BB8D2C89247D6E40007EA349 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D2C88247D6E40007EA349 /* LocationManager.swift */; };
 		BB8D2C8D247DC6B3007EA349 /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D2C8C247DC6B3007EA349 /* YelpAPI.swift */; };
+		BBC0791C2484D781005201AC /* HowCrowdedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC0791B2484D781005201AC /* HowCrowdedView.swift */; };
 		BBF26D6C246F21E60088496C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D6B246F21E60088496C /* AppDelegate.swift */; };
 		BBF26D6E246F21E60088496C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D6D246F21E60088496C /* SceneDelegate.swift */; };
 		BBF26D70246F21E60088496C /* OldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D6F246F21E60088496C /* OldView.swift */; };
@@ -41,7 +42,7 @@
 		BBF26D80246FB46A0088496C /* HamburglerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D7F246FB46A0088496C /* HamburglerView.swift */; };
 		BBF26D822470B8100088496C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D812470B8100088496C /* MenuView.swift */; };
 		BBF26D862473177C0088496C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D852473177B0088496C /* Account.swift */; };
-		BBF26D88247344AE0088496C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D87247344AE0088496C /* MainView.swift */; };
+		BBF26D88247344AE0088496C /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D87247344AE0088496C /* StoreView.swift */; };
 		BBF26D8A247345C50088496C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D89247345C50088496C /* MapView.swift */; };
 		BBF26D8D24734E980088496C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D8C24734E980088496C /* Coordinator.swift */; };
 		BBF26D97247428320088496C /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF26D96247428320088496C /* DatabaseManager.swift */; };
@@ -76,6 +77,7 @@
 		BB8638602478DF1000B7AE45 /* SparkAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkAuth.swift; sourceTree = "<group>"; };
 		BB8D2C88247D6E40007EA349 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BB8D2C8C247DC6B3007EA349 /* YelpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
+		BBC0791B2484D781005201AC /* HowCrowdedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowCrowdedView.swift; sourceTree = "<group>"; };
 		BBF26D68246F21E60088496C /* Bizzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bizzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBF26D6B246F21E60088496C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBF26D6D246F21E60088496C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +89,7 @@
 		BBF26D7F246FB46A0088496C /* HamburglerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburglerView.swift; sourceTree = "<group>"; };
 		BBF26D812470B8100088496C /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		BBF26D852473177B0088496C /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		BBF26D87247344AE0088496C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BBF26D87247344AE0088496C /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		BBF26D89247345C50088496C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		BBF26D8C24734E980088496C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		BBF26D96247428320088496C /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -128,7 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				BB20986E2475C0DD00F3E9FD /* MotherOfAllViews.swift */,
-				BBF26D87247344AE0088496C /* MainView.swift */,
+				BBF26D87247344AE0088496C /* StoreView.swift */,
+				BBC0791B2484D781005201AC /* HowCrowdedView.swift */,
 				BBF26D812470B8100088496C /* MenuView.swift */,
 				BB08DB7B24786C52000838D0 /* MapViewController.swift */,
 				BB8638502478DF1000B7AE45 /* ProfileView.swift */,
@@ -136,6 +139,7 @@
 				BB8638522478DF1000B7AE45 /* LaunchScreenView.swift */,
 				BB421E21247E9F3A001B2A3C /* WeNeedIt.swift */,
 				BB1901492481AF1000E12F01 /* LocDenied.swift */,
+				BBF26D89247345C50088496C /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,7 +204,6 @@
 				BBF26D852473177B0088496C /* Account.swift */,
 				BB08DB79247864B8000838D0 /* MenuButton.swift */,
 				BBF26D8B24734E7C0088496C /* Coordinators */,
-				BBF26D89247345C50088496C /* MapView.swift */,
 				BBF26D9824743EB80088496C /* DatabaseKeys.swift */,
 				BB8D2C88247D6E40007EA349 /* LocationManager.swift */,
 				BBF26D96247428320088496C /* DatabaseManager.swift */,
@@ -376,8 +379,9 @@
 				BB86386B2478DF1000B7AE45 /* Spark.swift in Sources */,
 				BB19014A2481AF1000E12F01 /* LocDenied.swift in Sources */,
 				BB8638622478DF1000B7AE45 /* SignInView.swift in Sources */,
+				BBC0791C2484D781005201AC /* HowCrowdedView.swift in Sources */,
 				BB86386D2478DF1000B7AE45 /* SparkUI.swift in Sources */,
-				BBF26D88247344AE0088496C /* MainView.swift in Sources */,
+				BBF26D88247344AE0088496C /* StoreView.swift in Sources */,
 				BB20986F2475C0DD00F3E9FD /* MotherOfAllViews.swift in Sources */,
 				BB8638612478DF1000B7AE45 /* ProfileView.swift in Sources */,
 				BBF26D9924743EB90088496C /* DatabaseKeys.swift in Sources */,

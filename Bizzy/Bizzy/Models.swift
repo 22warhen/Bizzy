@@ -7,30 +7,38 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
+//import Moya
+import SwiftLocation
 
-struct Root: Codable {
-    let businesses: [Business]
-}
-
-struct Business: Codable {
-    let id: String
-    let name: String
-    let imageUrl : URL
-    let distance: Double
-}
-
-struct BusinessListViewModel {
+struct Business : Codable, Identifiable {
     let name: String
     let imageUrl: URL
-    let distance: String
+    let distance: Double
     let id: String
+
 }
 
-extension BusinessListViewModel {
-    init(business: Business) {
-        self.name = business.name
-        self.id = business.id
-        self.imageUrl = business.imageUrl
-        self.distance = "\(business.distance / 1609.344)" //display in miles from meters
-    }
-}
+
+
+//class NetworkManager : ObservableObject {
+//    let service = MoyaProvider<YelpService.BusinessProvider>()
+//    let jsonDecoder = JSONDecoder()
+//    let locationService = LocationServices()
+//    var didChange = PassthroughSubject<NetworkManager,Never>()
+//    @State var root : [Business] = []
+//    
+//    func getBusinessesAtLocation() -> Void {
+//        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+//        var loco = LocationManager.shared.locateFromGPS(.oneShot, accuracy: .house, result: .none)
+//          service.request(.search(lat: 42.361145, long: -71.0507083)) {(result) in
+//        switch result {
+//        case .success(let response):
+//            self.root = try! self.jsonDecoder.decode([Business].self, from: response.data)
+//            print(self.root)
+//        case .failure(let error):
+//            print("Error: \(error)")
+//            }}
+//    }
+//}

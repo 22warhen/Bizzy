@@ -11,8 +11,10 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 #Apple Authentication UI
 pod 'FirebaseUI/OAuth'
-pod 'AlamofireImage'
-pod 'Moya'
+#pod 'AlamofireImage'
+#pod 'Moya'
 pod 'SwiftLocation', '~> 4.0'
+pod 'URLImage'
+pod 'CDYelpFusionKit', :git=> 'https://github.com/better-apps/CDYelpFusionKit.git', :branch => 'add-swift5-support'
 
 end

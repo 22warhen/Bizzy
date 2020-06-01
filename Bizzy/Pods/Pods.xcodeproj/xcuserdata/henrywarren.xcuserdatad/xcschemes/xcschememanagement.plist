@@ -9,12 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AlamofireImage.xcscheme</key>
+		<key>AlamofireObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>BoringSSL-GRPC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CDYelpFusionKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -104,7 +109,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Moya.xcscheme</key>
+		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -120,6 +125,11 @@
 			<false/>
 		</dict>
 		<key>SwiftLocation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>URLImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
