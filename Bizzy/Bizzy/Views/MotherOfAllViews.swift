@@ -30,11 +30,13 @@ class ViewRouter: ObservableObject {
  struct MotherView : View {
     let once = Once()
     @EnvironmentObject var viewRouter: ViewRouter
+    @ObservedObject var yelpManager = YelpManager()
     @EnvironmentObject var spark : Spark
     @State var page = "page1"
     @State var avail = false
     @State var x = 0
     func oneSetter() {
+        self.viewRouter.currentPage = "page0"
         self.viewRouter.currentPage = "page1"
     }
 
@@ -50,7 +52,9 @@ class ViewRouter: ObservableObject {
             if locationService.status == .authorizedAlways
             {
             print("authorizedAlways enabled, heading to 'page1')")
-            (oneSetter())
+                once.run {
+                    yelpManager.loadBusinesses()}
+            oneSetter()
             }}
             
         return ZStack{
@@ -64,7 +68,9 @@ class ViewRouter: ObservableObject {
 //                    ContentView()
 //                }i
 
-            
+            if self.viewRouter.currentPage == "howBusy"{
+                HowBusy()
+            }
             if self.viewRouter.currentPage == "page0.1" {
                 LocDenied()
             }
@@ -72,7 +78,7 @@ class ViewRouter: ObservableObject {
                     WeNeedIt(locationService: LocationServices())
                                }
                 else if self.viewRouter.currentPage == "page1" {
-                        ContentView()
+                    ContentView(yelpManager: YelpManager())
                 } else if self.viewRouter.currentPage == "page2" {
                     MapViewController()
                 }
