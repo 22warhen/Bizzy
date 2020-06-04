@@ -52,8 +52,8 @@ class ViewRouter: ObservableObject {
             if locationService.status == .authorizedAlways
             {
             print("authorizedAlways enabled, heading to 'page1')")
-                once.run {
-                    yelpManager.loadBusinesses()}
+                DispatchQueue.main.async {
+                    self.yelpManager.loadBusinesses()}
             oneSetter()
             }}
             

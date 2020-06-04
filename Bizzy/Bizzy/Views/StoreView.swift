@@ -9,6 +9,7 @@
 import SwiftUI
 import URLImage
 import CDYelpFusionKit
+import RemoteImage
 //import Moya
 import SwiftLocation
 struct ContentView: View {
@@ -25,54 +26,47 @@ struct ContentView: View {
 //        func setView1 {
 //        viewRouter.currentPage = "page1"
 //        }
-        ZStack {
-                VStack (alignment: .center){
-                Spacer()
-                HStack{
-                    Button(action: {
-                    self.yelpManager.loadBusinesses()
-                        print(self.yelpManager.autoSearchId[1].id)
-                    })
-                    {Text("Oh e")}
-                }
-            }
+        ZStack (alignment: .topTrailing) {
             VStack {
                 Group {
-                    
+                
                 ZStack(alignment:.topLeading){
-
-                    List(self.yelpManager.autoSearchId, id: \.id){
+                    NavigationView{
+                    List(self.yelpManager.mainBusinessList, id: \.id){
                         business in
                         
                             VStack{
                                 HStack{
                                     Spacer()
-                                    //print number of miles away
-                                    
+                                    //print number of miles away from meters
                                     Text("\(forTrailingZero(temp: round(business.distance!*0.000621371/0.1)*0.1)) mi")
                                 }
                                 Spacer()
-                                
-                                VStack (alignment: .center){
-                                    GeometryReader {geo in
-                                    Spacer()
-                                    if business.imageUrl != nil{
-                                        
-                                        URLImage((business.imageUrl!), processors: [Resize(size: CGSize(width: geo.size.width, height: geo.size.height*2), scale: UIScreen.main.scale)], content:  {
-                                            $0.image
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                                .fixedSize(horizontal: true, vertical: true)
-                                                .frame(width: geo.size.width, height: geo.size.height*2)
-                                         
-                                    })
-                                        
-                                        .frame(width: 200, height: geo.size.height)
-                                        
-                                        }}
-                                    Spacer()
+                                GeometryReader {geo in
                                     
-                                }.clipped()
+                                ZStack (alignment: .center){
+//                                    if business.imageUrl != nil{
+//                                        URLImage((business.imageUrl!), processors: [Resize(size: CGSize(width: geo.size.width, height: 100), scale: UIScreen.main.scale)], content:  {
+//                                            $0.image
+//                                            .resizable()
+//                                            .frame(width:geo.size.width, height: 100)
+//                                            )
+//
+//                                        }
+                                    if business.imageUrl != nil{
+                                    RemoteImage(type: .url(business.imageUrl!), errorView: { error in
+                                        Text(error.localizedDescription)
+                                        }, imageView: { image in
+                                            image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                                .frame(width: 100, height: 50)
+                                        }, loadingView: {
+                                            Text("Loading ...")
+                                        })
+                                }
+                                    }}
+                          
                                 HStack{
                                 Text("\(business.name!)")
                                     .font(.largeTitle)
@@ -81,18 +75,33 @@ struct ContentView: View {
                                     Text("\(1)")
                                     Image(systemName: "person")
                                 }//.padding(.horizontal)
+                                
+                    }
 
-                    }}.id(UUID())
+                        .onAppear(){
+                        self.yelpManager.loadMoreBusinesses(currentItem: business)
+                                           }
+
+                    }
+                        .navigationBarTitle(Text("Businesses Near You"))
+                    .navigationBarItems(trailing:
+                        Button(action: {self.yelpManager.loadBusinesses()
+                            print("refreshed")})
+                            {Text("Refresh")})
+                
                         //.listRowBackground(Color.red)
-                    .padding(.vertical, 50)
-                    }.overlay(MenuButton())
+                   // .padding(.vertical, 50)
+                    
+                    }
+                    
                     //self.networkManager.getBusinessesAtLocation()
                         //self.localBusiness = self.networkManager.root
                         // Query Yelp Fusion API for business results
-                        .onAppear(){
-                            self.yelpManager.loadBusinesses()
+                    
                     }
+                .overlay(MenuButton())
                 }
+                
             }
         }
         
@@ -130,4 +139,5 @@ struct ContentView_Previews: PreviewProvider {
         //Menu(open: .constant(true))
     }
 }
+
 

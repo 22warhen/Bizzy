@@ -107,7 +107,7 @@ struct HowBusy: View {
             
             
         }
-    }
+        }.navigationBarTitle("Businesses Near You")
 }
 
 struct HowBusy_Previews: PreviewProvider {

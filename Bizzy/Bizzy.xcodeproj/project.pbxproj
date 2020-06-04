@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		BB421E22247E9F3A001B2A3C /* WeNeedIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB421E21247E9F3A001B2A3C /* WeNeedIt.swift */; };
 		BB421E242480023F001B2A3C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB421E232480023E001B2A3C /* GoogleService-Info.plist */; };
 		BB421E26248004C2001B2A3C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB421E25248004C2001B2A3C /* Models.swift */; };
+		BB454BED2488C92100761F17 /* RemoteImage in Frameworks */ = {isa = PBXBuildFile; productRef = BB454BEC2488C92100761F17 /* RemoteImage */; };
 		BB8638612478DF1000B7AE45 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8638502478DF1000B7AE45 /* ProfileView.swift */; };
 		BB8638622478DF1000B7AE45 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8638512478DF1000B7AE45 /* SignInView.swift */; };
 		BB8638632478DF1000B7AE45 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8638522478DF1000B7AE45 /* LaunchScreenView.swift */; };
@@ -32,6 +33,7 @@
 		BB86386F2478DF1000B7AE45 /* SparkAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8638602478DF1000B7AE45 /* SparkAuth.swift */; };
 		BB8D2C89247D6E40007EA349 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D2C88247D6E40007EA349 /* LocationManager.swift */; };
 		BB8D2C8D247DC6B3007EA349 /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D2C8C247DC6B3007EA349 /* YelpAPI.swift */; };
+		BB9993B92487E51A00AF269A /* IndivBusiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9993B82487E51A00AF269A /* IndivBusiView.swift */; };
 		BBC0791C2484D781005201AC /* HowBusyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC0791B2484D781005201AC /* HowBusyView.swift */; };
 		BBC0791E248532A0005201AC /* YelpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC0791D248532A0005201AC /* YelpManager.swift */; };
 		BBC079262485C179005201AC /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC079252485C179005201AC /* BackButton.swift */; };
@@ -79,6 +81,7 @@
 		BB8638602478DF1000B7AE45 /* SparkAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkAuth.swift; sourceTree = "<group>"; };
 		BB8D2C88247D6E40007EA349 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BB8D2C8C247DC6B3007EA349 /* YelpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
+		BB9993B82487E51A00AF269A /* IndivBusiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndivBusiView.swift; sourceTree = "<group>"; };
 		BBC0791B2484D781005201AC /* HowBusyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowBusyView.swift; sourceTree = "<group>"; };
 		BBC0791D248532A0005201AC /* YelpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpManager.swift; sourceTree = "<group>"; };
 		BBC079252485C179005201AC /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB454BED2488C92100761F17 /* RemoteImage in Frameworks */,
 				39801DC7DC564BC56EEB33E4 /* Pods_Bizzy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +139,7 @@
 			children = (
 				BB20986E2475C0DD00F3E9FD /* MotherOfAllViews.swift */,
 				BBF26D87247344AE0088496C /* StoreView.swift */,
+				BB9993B82487E51A00AF269A /* IndivBusiView.swift */,
 				BBC0791B2484D781005201AC /* HowBusyView.swift */,
 				BBC0791D248532A0005201AC /* YelpManager.swift */,
 				BBF26D812470B8100088496C /* MenuView.swift */,
@@ -257,6 +262,9 @@
 			dependencies = (
 			);
 			name = Bizzy;
+			packageProductDependencies = (
+				BB454BEC2488C92100761F17 /* RemoteImage */,
+			);
 			productName = Bizzy;
 			productReference = BBF26D68246F21E60088496C /* Bizzy.app */;
 			productType = "com.apple.product-type.application";
@@ -285,6 +293,9 @@
 				Base,
 			);
 			mainGroup = BBF26D5F246F21E60088496C;
+			packageReferences = (
+				BB454BEB2488C92100761F17 /* XCRemoteSwiftPackageReference "RemoteImage" */,
+			);
 			productRefGroup = BBF26D69246F21E60088496C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -388,6 +399,7 @@
 				BBC0791C2484D781005201AC /* HowBusyView.swift in Sources */,
 				BB86386D2478DF1000B7AE45 /* SparkUI.swift in Sources */,
 				BBF26D88247344AE0088496C /* StoreView.swift in Sources */,
+				BB9993B92487E51A00AF269A /* IndivBusiView.swift in Sources */,
 				BB20986F2475C0DD00F3E9FD /* MotherOfAllViews.swift in Sources */,
 				BB8638612478DF1000B7AE45 /* ProfileView.swift in Sources */,
 				BBF26D9924743EB90088496C /* DatabaseKeys.swift in Sources */,
@@ -608,6 +620,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB454BEB2488C92100761F17 /* XCRemoteSwiftPackageReference "RemoteImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/crelies/RemoteImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB454BEC2488C92100761F17 /* RemoteImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB454BEB2488C92100761F17 /* XCRemoteSwiftPackageReference "RemoteImage" */;
+			productName = RemoteImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BBF26D60246F21E60088496C /* Project object */;
 }

@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RemoteImage",
+        "repositoryURL": "https://github.com/crelies/RemoteImage.git",
+        "state": {
+          "branch": null,
+          "revision": "dd92986fbb43c7a204aafabb0b3f550e94d55e70",
+          "version": "2.0.2"
+        }
+      },
+      {
+        "package": "ViewInspector",
+        "repositoryURL": "https://github.com/nalexn/ViewInspector.git",
+        "state": {
+          "branch": null,
+          "revision": "7d55eb940242512aad2bf28db354d09d5de43893",
+          "version": "0.3.11"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
